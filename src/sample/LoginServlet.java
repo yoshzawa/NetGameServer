@@ -37,13 +37,21 @@ public class LoginServlet extends HttpServlet {
 		// PrintWriter out = response.getWriter();
 		// out.append("Served at: ").append(request.getContextPath());
 		try {
-			int id = Integer.parseInt(request.getParameter("id"));
+			String sId = request.getParameter("id");
+			if(sId==null) {
+				throw new NullPointerException();
+			}
+			int id = Integer.parseInt(sId);
+				
 			Player p = new Player(id, "ƒ{ƒu", 10, new Date(), false);
 			request.setAttribute("person", p);
 			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
 			rd.forward(request, response);
 		} catch (NumberFormatException e) {
 			RequestDispatcher rd = request.getRequestDispatcher("/loginError.jsp");
+			rd.forward(request, response);
+		} catch(NullPointerException e) {
+			RequestDispatcher rd = request.getRequestDispatcher("/loginNull.jsp");
 			rd.forward(request, response);
 		}
 

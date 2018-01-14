@@ -3,9 +3,9 @@
 <% Player p = (Player)request.getAttribute("person"); %>
 {"id":<%=p.getId() %>,
 "name":"<%=p.getName() %>",
-"level:<%=p.getLevel() %>",
+"level":<%=p.getLevel() %>,
 "lastLogin":"<%=p.getLastLogin() %>",
-"message":"<%=p.getLastLogin() %>",
+"message":"<%=p.getMessage() %>",
 "loginURL":"<%=p.getLoginUrl() %>",
 "present":"<%=p.hasPresent() %>"
 }
