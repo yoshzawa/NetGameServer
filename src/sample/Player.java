@@ -51,7 +51,7 @@ public class Player {
 	public Player(int id, String name, int level, Date lastLogin,  
 			 boolean hasPresent) {
 		this(id,name,level,lastLogin,"デフォルトのメッセージ",
-				"http://www.jc-21.ac.jp",hasPresent);
+				"https://h29netgame.azurewebsites.net/",hasPresent);
 	}
 	
 
